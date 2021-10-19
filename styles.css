@@ -1,0 +1,10 @@
+.productInBasket {
+  margin: 2px;
+  font-size: 85%;
+}
+
+.productInfo {
+  margin: 1px;
+  font-size: 90%;
+  text-transform: capitalize;
+}
