@@ -1,8 +1,9 @@
 const productContainer = document.getElementById("root");
-const counterContainer = document.getElementById("counter");
+const totalContainer = document.getElementById("total");
 
 const url = "https://mock-data-api.firebaseio.com/webb21/products.json";
 let clicks = 0;
+let totalSum = 0;
 let shopingList = [];
 let products = [];
 
@@ -28,14 +29,15 @@ function showBasket() {
   });
 }
 
-function createCounter() {
+function createTotalField(price) {
+  totalSum += price;
   clicks++;
-  counterContainer.innerText = `Total: ${clicks}`;
+  totalContainer.innerText = `Total: ${clicks} st för ${totalSum} kr`;
 }
 
 function productItemOnClick(productItem) {
   return function () {
-    createCounter();
+    createTotalField(productItem.price);
 
     addToBasket(productItem.name, productItem.price);
 
