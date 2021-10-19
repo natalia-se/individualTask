@@ -8,7 +8,6 @@ let products = [];
 
 function addToBasket(name, price) {
   let product = shopingList.find((item) => item.name === name);
-  console.log(product);
 
   if (product) product.amount++;
   else shopingList.push({ name, price, amount: 1 });
